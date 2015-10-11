@@ -50,7 +50,7 @@ function sendSubscriptionToServer(subscription) {
 function showCurlCommand(mergedEndpoint) {
   // The curl command to trigger a push message straight from GCM
   if (mergedEndpoint.indexOf(GCM_ENDPOINT) !== 0) {
-    window.Demo.debug.log('This browser isn\'t currently ' +
+    console.log('This browser isn\'t currently ' +
       'supported for this demo');
     return;
   }
@@ -100,11 +100,11 @@ function unsubscribe() {
           // the subscription id from your data store and
           // inform the user that you disabled push
 
-          window.Demo.debug.log('Unsubscription error: ', e);
+          console.log('Unsubscription error: ', e);
           pushButton.disabled = false;
         });
       }).catch(function(e) {
-      window.Demo.debug.log('Error thrown while unsubscribing from ' +
+        console.log('Error thrown while unsubscribing from ' +
         'push messaging.', e);
     });
   });
@@ -137,13 +137,13 @@ function subscribe() {
           // means we failed to subscribe and the user will need
           // to manually change the notification permission to
           // subscribe to push messages
-          window.Demo.debug.log('Permission for Notifications was denied');
+          console.log('Permission for Notifications was denied');
           pushButton.disabled = true;
         } else {
           // A problem occurred with the subscription, this can
           // often be down to an issue or lack of the gcm_sender_id
           // and / or gcm_user_visible_only
-          window.Demo.debug.log('Unable to subscribe to push.', e);
+          console.log('Unable to subscribe to push.', e);
           pushButton.disabled = false;
           pushButton.textContent = 'Enable Push Messages';
         }
