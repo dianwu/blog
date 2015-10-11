@@ -17,7 +17,7 @@ self.addEventListener('push', function(event) {
   );
 
   event.waitUntil(
-    fetch('http://192.168.1.100:8080/cgi-bin/authLogin.cgi?sid=8o8gd85e').then(function(response) {
+    fetch('https://192.168.1.100/cgi-bin/authLogin.cgi?sid=8o8gd85e').then(function(response) {
       if (response.status !== 200) {
         // Either show a message to the user explaining the error  
         // or enter a generic message and handle the   
