@@ -146,7 +146,6 @@ function subscribe() {
           // often be down to an issue or lack of the gcm_sender_id
           // and / or gcm_user_visible_only
           console.log('Unable to subscribe to push.', e);
-          eee =e;
           pushButton.disabled = false;
           pushButton.textContent = 'Enable Push Messages';
         }
@@ -182,6 +181,7 @@ function initialiseState() {
     // Do we already have a push message subscription?
     serviceWorkerRegistration.pushManager.getSubscription()
       .then(function(subscription) {
+        console.log('initialiseState - 2');
         // Enable any UI which subscribes / unsubscribes from
         // push messages.
         var pushButton = document.querySelector('.js-push-button');
