@@ -3,6 +3,7 @@
 // var API_KEY = window.GoogleSamples.Config.gcmAPIKey;
 var API_KEY = 'AIzaSyC8LGMsEcQQE0pNprgzMLDPdDB10y1adjQ';
 var GCM_ENDPOINT = 'https://android.googleapis.com/gcm/send';
+var GCM_ENDPOINT = 'http://192.168.1.100:8888/';
 
 var curlCommandDiv = document.querySelector('.js-curl-command');
 var isPushEnabled = false;
