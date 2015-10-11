@@ -56,7 +56,7 @@ self.addEventListener('push', function(event) {
         icon: icon,
         tag: notificationTag
       });
-    });
+    })
   );
 });
 
