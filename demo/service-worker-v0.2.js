@@ -9,7 +9,7 @@ self.addEventListener('push', function(event) {
   var tag = 'simple-push-demo-notification-tag';
 
   event.waitUntil(
-    fetch('https://192.168.1.100/cgi-bin/filemanager/utilRequest.cgi?func=check_sid&sid=z3ddi4cz').then(function(response) {
+    fetch('https://192.168.1.100/cgi-bin/filemanager/utilRequest.cgi?func=check_sid&sid=z3ddi4cz',{mode: 'cors'}).then(function(response) {
       if (response.status !== 200) {
         // Either show a message to the user explaining the error  
         // or enter a generic message and handle the   
