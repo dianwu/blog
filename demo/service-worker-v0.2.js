@@ -9,14 +9,6 @@ self.addEventListener('push', function(event) {
   var tag = 'simple-push-demo-notification-tag';
 
   event.waitUntil(
-    self.registration.showNotification(title, {
-      body: body,
-      icon: icon,
-      tag: tag
-    })
-  );
-
-  event.waitUntil(
     fetch('https://192.168.1.100/cgi-bin/filemanager/utilRequest.cgi?func=check_sid&sid=z3ddi4cz').then(function(response) {
       if (response.status !== 200) {
         // Either show a message to the user explaining the error  
