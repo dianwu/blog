@@ -146,6 +146,7 @@ function subscribe() {
           // often be down to an issue or lack of the gcm_sender_id
           // and / or gcm_user_visible_only
           console.log('Unable to subscribe to push.', e);
+          eee =e;
           pushButton.disabled = false;
           pushButton.textContent = 'Enable Push Messages';
         }
@@ -221,7 +222,7 @@ window.addEventListener('load', function() {
   // enhance and add push messaging support, otherwise continue without it.
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
-      // .then(initialiseState);
+      .then(initialiseState);
       console.log('load - 1');
   } else {
     console.log('Service workers aren\'t supported in this browser.');
